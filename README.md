@@ -5,13 +5,13 @@
 
 ## Group Members
 
-| Student Number | Full Name     |
-|----------------|---------------|
-| 210070123      | John Doe      |
-| 210070456      | Jane Smith    |
-| 210070789      | Clark Kent    |
-| 210070111      | Bruce Lee     |
-| 210070222      | Diana Prince  |
+| Student Number | Full Name          |
+|----------------|--------------------| 
+| 222044842      | Sinekhaya Vatsha   |
+| 221038861      |Lunga Rick Mthokonya|
+| 222036964      |Edward VP Mandlazi  |
+| 210070111      | Bruce Lee          |
+| 210070222      | Diana Prince       |
 
 ---
 
