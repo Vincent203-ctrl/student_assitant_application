@@ -1,0 +1,9 @@
+<!--
+  Student Numbers: 210070123, 210070456, 210070789, 210070111, 210070222
+  Student Names  : John Doe, Jane Smith, Clark Kent, Bruce Lee, Diana Prince
+  File           : colors.xml
+-->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="launch_background">#003B5C</color>
+</resources>

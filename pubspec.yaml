@@ -1,0 +1,35 @@
+name: student_assistant_app
+description: Student Assistant Application System - TPG316C Group Assignment
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  supabase_flutter: ^2.3.0
+  provider: ^6.1.1
+  file_picker: ^6.1.1
+  image_picker: ^1.0.7
+  shared_preferences: ^2.2.2
+  intl: ^0.19.0
+  uuid: ^4.3.3
+  flutter_dotenv: ^5.1.0
+  cached_network_image: ^3.3.1
+  shimmer: ^3.0.0
+  fluttertoast: ^8.2.4
+  lottie: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env

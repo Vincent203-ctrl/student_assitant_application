@@ -1,0 +1,14 @@
+<!--
+  Student Numbers: 210070123, 210070456, 210070789, 210070111, 210070222
+  Student Names  : John Doe, Jane Smith, Clark Kent, Bruce Lee, Diana Prince
+  File           : styles.xml
+-->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">@color/launch_background</item>
+    </style>
+    <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+</resources>
