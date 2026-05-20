@@ -1,7 +1,6 @@
 /**
- * Student Numbers: 210070123, 210070456, 210070789, 210070111, 210070222
- * Student Names  : John Doe, Jane Smith, Clark Kent, Bruce Lee, Diana Prince
- * File           : student_home_screen.dart
+ * student name: Sinekhaya Vatsha/ 
+ * studentNo: 222044842/
  */
 
 import 'package:flutter/material.dart';
@@ -62,8 +61,7 @@ class _StudentHomeScreenState extends State<StudentHomeScreen>
             borderRadius: BorderRadius.circular(20)),
         title: const Text('Sign Out',
             style: TextStyle(fontWeight: FontWeight.w700)),
-        content:
-            const Text('Are you sure you want to sign out?'),
+        content: const Text('Are you sure you want to sign out?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
@@ -115,7 +113,63 @@ class _StudentHomeScreenState extends State<StudentHomeScreen>
                 pinned: true,
                 automaticallyImplyLeading: false,
                 backgroundColor: AppColors.primary,
+                // No actions here - buttons are in flexibleSpace only
                 flexibleSpace: FlexibleSpaceBar(
+                  titlePadding: EdgeInsets.zero,
+                  title: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 8),
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          AppColors.primaryDark,
+                          AppColors.primary,
+                        ],
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'SA Portal',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () => _loadData(),
+                              child: Container(
+                                padding: const EdgeInsets.all(6),
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withOpacity(0.15),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: const Icon(Icons.refresh_rounded,
+                                    color: Colors.white, size: 18),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            GestureDetector(
+                              onTap: _handleLogout,
+                              child: Container(
+                                padding: const EdgeInsets.all(6),
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withOpacity(0.15),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: const Icon(Icons.logout_rounded,
+                                    color: Colors.white, size: 18),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                   background: Container(
                     decoration: const BoxDecoration(
                       gradient: LinearGradient(
@@ -144,7 +198,7 @@ class _StudentHomeScreenState extends State<StudentHomeScreen>
                                       width: 48,
                                       height: 48,
                                       decoration: BoxDecoration(
-                                        gradient: LinearGradient(
+                                        gradient: const LinearGradient(
                                           colors: [
                                             AppColors.accent,
                                             AppColors.accentLight,
@@ -163,8 +217,7 @@ class _StudentHomeScreenState extends State<StudentHomeScreen>
                                       ),
                                       child: Center(
                                         child: Text(
-                                          (profile?.fullName ??
-                                                  'U')[0]
+                                          (profile?.fullName ?? 'U')[0]
                                               .toUpperCase(),
                                           style: const TextStyle(
                                             color: Colors.white,
@@ -195,8 +248,7 @@ class _StudentHomeScreenState extends State<StudentHomeScreen>
                                             fontSize: 16,
                                           ),
                                         ),
-                                        if (profile?.studentNumber !=
-                                            null)
+                                        if (profile?.studentNumber != null)
                                           Text(
                                             profile!.studentNumber!,
                                             style: TextStyle(
@@ -206,43 +258,6 @@ class _StudentHomeScreenState extends State<StudentHomeScreen>
                                             ),
                                           ),
                                       ],
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    GestureDetector(
-                                      onTap: () => _loadData(),
-                                      child: Container(
-                                        padding: const EdgeInsets.all(8),
-                                        decoration: BoxDecoration(
-                                          color: Colors.white
-                                              .withOpacity(0.15),
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                        ),
-                                        child: const Icon(
-                                            Icons.refresh_rounded,
-                                            color: Colors.white,
-                                            size: 20),
-                                      ),
-                                    ),
-                                    const SizedBox(width: 8),
-                                    GestureDetector(
-                                      onTap: _handleLogout,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(8),
-                                        decoration: BoxDecoration(
-                                          color: Colors.white
-                                              .withOpacity(0.15),
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                        ),
-                                        child: const Icon(
-                                            Icons.logout_rounded,
-                                            color: Colors.white,
-                                            size: 20),
-                                      ),
                                     ),
                                   ],
                                 ),
@@ -293,41 +308,6 @@ class _StudentHomeScreenState extends State<StudentHomeScreen>
                     ),
                   ),
                 ),
-                title: const Text(
-                  'SA Portal',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                actions: [
-                  GestureDetector(
-                    onTap: () => _loadData(),
-                    child: Container(
-                      margin: const EdgeInsets.only(right: 8),
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.15),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Icon(Icons.refresh_rounded,
-                          color: Colors.white, size: 20),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: _handleLogout,
-                    child: Container(
-                      margin: const EdgeInsets.only(right: 16),
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.15),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Icon(Icons.logout_rounded,
-                          color: Colors.white, size: 20),
-                    ),
-                  ),
-                ],
               ),
 
               // Apply button or existing application notice
@@ -581,7 +561,6 @@ class _ApplicationCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header
             Container(
               padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
               decoration: BoxDecoration(

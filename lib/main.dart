@@ -1,6 +1,6 @@
 /**
- * Student Numbers: 210070123, 210070456, 210070789, 210070111, 210070222
- * Student Names  : John Doe, Jane Smith, Clark Kent, Bruce Lee, Diana Prince
+ * Student Numbers: 222044842/
+ * Student Names  : Sinekhaya Vatsha/
  * File           : main.dart
  * Description    : Entry point for the Student Assistant Application System.
  *                  Initialises Supabase, sets up the Provider tree (MVVM),

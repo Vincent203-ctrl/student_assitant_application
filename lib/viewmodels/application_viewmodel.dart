@@ -1,7 +1,6 @@
 /**
- * Student Numbers: 210070123, 210070456, 210070789, 210070111, 210070222
- * Student Names  : John Doe, Jane Smith, Clark Kent, Bruce Lee, Diana Prince
- * File           : application_viewmodel.dart
+ * student name: Sinekhaya Vatsha/ 
+ * studentNo: 222044842/
  */
 
 import 'dart:io';
@@ -29,7 +28,7 @@ class ApplicationViewModel extends ChangeNotifier {
   ModuleModel? _selectedModule1;
   int _selectedModule1Level = 1;
   ModuleModel? _selectedModule2;
-  int? _selectedModule2Level;
+  int? _selectedModule2Level = 1;
   bool _meetsRequirements = false;
   bool _addSecondModule = false;
   File? _documentFile;
@@ -57,9 +56,9 @@ class ApplicationViewModel extends ChangeNotifier {
 
   List<ModuleModel> get modulesForLevel1 =>
       _modules.where((m) => m.academicLevel == _selectedModule1Level).toList();
-  List<ModuleModel> get modulesForLevel2 => _selectedModule2Level != null
-      ? _modules.where((m) => m.academicLevel == _selectedModule2Level).toList()
-      : [];
+
+  List<ModuleModel> get modulesForLevel2 =>
+      _modules.where((m) => m.academicLevel == (_selectedModule2Level ?? 1)).toList();
 
   // =============================================
   // LOAD DATA
@@ -125,7 +124,7 @@ class ApplicationViewModel extends ChangeNotifier {
   }
 
   void setModule2Level(int? level) {
-    _selectedModule2Level = level;
+    _selectedModule2Level = level ?? 1;
     _selectedModule2 = null;
     notifyListeners();
   }
@@ -142,7 +141,9 @@ class ApplicationViewModel extends ChangeNotifier {
 
   void toggleSecondModule(bool value) {
     _addSecondModule = value;
-    if (!value) {
+    if (value) {
+      _selectedModule2Level = 1;
+    } else {
       _selectedModule2 = null;
       _selectedModule2Level = null;
     }
@@ -159,7 +160,7 @@ class ApplicationViewModel extends ChangeNotifier {
     _selectedYearOfStudy = app.yearOfStudy;
     _selectedModule1Level = app.module1Level;
     _selectedModule1 = app.module1;
-    _selectedModule2Level = app.module2Level;
+    _selectedModule2Level = app.module2Level ?? 1;
     _selectedModule2 = app.module2;
     _meetsRequirements = app.meetsRequirements;
     _addSecondModule = app.hasSecondModule;
@@ -172,7 +173,7 @@ class ApplicationViewModel extends ChangeNotifier {
     _selectedModule1 = null;
     _selectedModule1Level = 1;
     _selectedModule2 = null;
-    _selectedModule2Level = null;
+    _selectedModule2Level = 1;
     _meetsRequirements = false;
     _addSecondModule = false;
     _documentFile = null;
@@ -191,12 +192,14 @@ class ApplicationViewModel extends ChangeNotifier {
       return false;
     }
     if (!_meetsRequirements) {
-      _errorMessage = 'You must confirm that you meet the eligibility requirements.';
+      _errorMessage =
+          'You must confirm that you meet the eligibility requirements.';
       notifyListeners();
       return false;
     }
     if (_addSecondModule && _selectedModule2 == null) {
-      _errorMessage = 'Please select a second module or disable the second module option.';
+      _errorMessage =
+          'Please select a second module or disable the second module option.';
       notifyListeners();
       return false;
     }
@@ -205,7 +208,8 @@ class ApplicationViewModel extends ChangeNotifier {
     try {
       String? docUrl;
       if (_documentFile != null) {
-        docUrl = await SupabaseService.uploadDocument(_documentFile!, studentId);
+        docUrl =
+            await SupabaseService.uploadDocument(_documentFile!, studentId);
       }
 
       final application = ApplicationModel(
@@ -240,7 +244,8 @@ class ApplicationViewModel extends ChangeNotifier {
     }
   }
 
-  Future<bool> updateApplication(String applicationId, String studentId) async {
+  Future<bool> updateApplication(
+      String applicationId, String studentId) async {
     if (_selectedModule1 == null) {
       _errorMessage = 'Please select a primary module.';
       notifyListeners();
@@ -251,7 +256,8 @@ class ApplicationViewModel extends ChangeNotifier {
     try {
       String? docUrl = _selectedApplication?.documentUrl;
       if (_documentFile != null) {
-        docUrl = await SupabaseService.uploadDocument(_documentFile!, studentId);
+        docUrl =
+            await SupabaseService.uploadDocument(_documentFile!, studentId);
       }
 
       final application = ApplicationModel(

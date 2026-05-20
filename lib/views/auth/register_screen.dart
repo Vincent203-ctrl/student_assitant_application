@@ -1,7 +1,6 @@
 /**
- * Student Numbers: 210070123, 210070456, 210070789, 210070111, 210070222
- * Student Names  : John Doe, Jane Smith, Clark Kent, Bruce Lee, Diana Prince
- * File           : register_screen.dart
+ * student name: Sinekhaya Vatsha/ 
+ * studentNo: 222044842/
  */
 
 import 'package:flutter/material.dart';

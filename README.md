@@ -5,16 +5,18 @@
 
 ## Group Members
 
-| Student Number | Full Name          |
-|----------------|--------------------| 
-| 222044842      | Sinekhaya Vatsha   |
-| 221038861      |Lunga Rick Mthokonya|
-| 222036964      |Edward VP Mandlazi  |
-| 210070111      | Bruce Lee          |
-| 210070222      | Diana Prince       |
-
----
-
+| Student Number | Full Name            |
+|----------------|----------------------| 
+| 222044842      | Sinekhaya Vatsha     |
+| 221038861      |Lunga Rick Mthokonya  |
+| 222036964      |Edward VP Mandlazi    |
+| 223032939      | Mfundo Mazwi         | 
+| 224078727      | Asamkele Macingwane  |
+| 224069310      | Mthokozisi Hlatshwayo|
+| 223000859      | Lwazi Nkambule       |
+| 224022878      | Thina Mngxozana      |
+| 222031189      | Mamelo L Nthako      |
+| 224040216      | Asande M Mbhele      |
 ## Project Overview
 
 A Flutter mobile application that allows students to apply for **Student Assistant** positions at the IT Department, and allows admin staff to review, approve or reject applications.
